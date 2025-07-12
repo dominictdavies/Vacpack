@@ -19,20 +19,24 @@ namespace Vacpack.Content.Items
 			Item.rare = ItemRarityID.Blue;
 
 			// Use Properties
-			Item.useTime = 20;
-			Item.useAnimation = 20;
-			Item.useStyle = ItemUseStyleID.Swing;
+			Item.useTime = 2;
+			Item.useAnimation = 2;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.autoReuse = true;
 
 			// Sound Property
 			Item.UseSound = SoundID.Item1;
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Melee;
+			Item.DamageType = DamageClass.Ranged;
 			Item.damage = 50;
-			Item.knockBack = 6;
+			Item.knockBack = 6f;
+			Item.noMelee = true;
 
 			// Gun Properties
+			Item.shoot = ProjectileID.Bullet;
+			Item.shootSpeed = 10f;
+			Item.useAmmo = AmmoID.Gel;
 		}
 
 		public override void AddRecipes()
