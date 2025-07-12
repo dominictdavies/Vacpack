@@ -19,13 +19,13 @@ namespace Vacpack.Content.Items
 			Item.rare = ItemRarityID.Blue;
 
 			// Use Properties
-			Item.useTime = 2;
-			Item.useAnimation = 2;
+			Item.useTime = 1;
+			Item.useAnimation = 1;
 			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.autoReuse = true;
 
 			// Sound Property
-			Item.UseSound = SoundID.Item1;
+			Item.UseSound = SoundID.Item11;
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Ranged;
