@@ -12,18 +12,27 @@ namespace Vacpack.Content.Items
 		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Vacpack.hjson' file.
 		public override void SetDefaults()
 		{
-			Item.damage = 50;
-			Item.DamageType = DamageClass.Melee;
+			// Common Properties
 			Item.width = 40;
 			Item.height = 40;
+			Item.value = Item.buyPrice(silver: 1);
+			Item.rare = ItemRarityID.Blue;
+
+			// Use Properties
 			Item.useTime = 20;
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
-			Item.knockBack = 6;
-			Item.value = Item.buyPrice(silver: 1);
-			Item.rare = ItemRarityID.Blue;
-			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
+
+			// Sound Property
+			Item.UseSound = SoundID.Item1;
+
+			// Weapon Properties
+			Item.DamageType = DamageClass.Melee;
+			Item.damage = 50;
+			Item.knockBack = 6;
+
+			// Gun Properties
 		}
 
 		public override void AddRecipes()
