@@ -1,0 +1,3 @@
+displayName = Vacpack
+author = Doomimic
+version = 0.1
