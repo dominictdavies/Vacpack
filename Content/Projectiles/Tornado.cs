@@ -18,7 +18,7 @@ namespace Vacpack.Content.Projectiles
 
 		public override void SetDefaults()
 		{
-			Projectile.width = 64;
+			Projectile.width = 128;
 			Projectile.height = 128;
 			Projectile.tileCollide = false;
 			Projectile.penetrate = -1;
@@ -27,7 +27,7 @@ namespace Vacpack.Content.Projectiles
 			Projectile.hide = true; // Hides the projectile, so it will draw in the player's hand when we set the player's heldProj to this one.
 		}
 
-		public override void AI()
+		public void DrawTornado()
 		{
 			Player player = Main.player[Projectile.owner];
 
@@ -73,6 +73,22 @@ namespace Vacpack.Content.Projectiles
 			Projectile.Center = playerCenter; // Centers the projectile on the player. Projectile.velocity will be added to this in later Terraria code causing the projectile to be held away from the player at a set distance.
 			Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
 			player.itemRotation = (Projectile.velocity * Projectile.direction).ToRotation();
+		}
+
+		public void MoveEnemies()
+		{
+			foreach (NPC npc in Main.ActiveNPCs) {
+				Rectangle currentTornadoHitbox = new((int)(Projectile.Hitbox.X + Projectile.velocity.X), (int)(Projectile.Hitbox.Y + Projectile.velocity.Y), Projectile.width, Projectile.height);
+				if (currentTornadoHitbox.Intersects(npc.Hitbox)) {
+					npc.velocity -= Projectile.velocity / 256f;
+				}
+			}
+		}
+
+		public override void AI()
+		{
+			DrawTornado();
+			MoveEnemies();
 		}
 	}
 }
