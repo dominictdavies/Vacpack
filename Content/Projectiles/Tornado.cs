@@ -78,7 +78,7 @@ namespace Vacpack.Content.Projectiles
 		public void MoveEnemies()
 		{
 			foreach (NPC npc in Main.ActiveNPCs) {
-				Rectangle currentTornadoHitbox = new((int)(Projectile.Hitbox.X + Projectile.velocity.X), (int)(Projectile.Hitbox.Y + Projectile.velocity.Y), Projectile.width, Projectile.height);
+				Rectangle currentTornadoHitbox = new(Projectile.Hitbox.X + (int)Projectile.velocity.X, Projectile.Hitbox.Y + (int)Projectile.velocity.Y, Projectile.width, Projectile.height);
 				if (currentTornadoHitbox.Intersects(npc.Hitbox)) {
 					npc.velocity -= Projectile.velocity / 256f;
 				}
