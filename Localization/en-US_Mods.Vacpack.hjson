@@ -11,3 +11,5 @@ Items: {
 			'''
 	}
 }
+
+Projectiles.Tornado.DisplayName: Tornado

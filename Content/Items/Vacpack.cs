@@ -1,3 +1,4 @@
+using Vacpack.Content.Projectiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -24,12 +25,9 @@ namespace Vacpack.Content.Items
 			// Use Properties
 			Item.useTime = 30;
 			Item.useAnimation = 30;
-
-			// Sound Property
 			Item.UseSound = SoundID.Item11;
 
-			// Gun Properties
-			Item.channel = false;
+			// Shoot Properties
 			Item.shoot = ProjectileID.Bullet;
 			Item.shootSpeed = 10f;
 			Item.useAmmo = AmmoID.Gel;
@@ -40,14 +38,11 @@ namespace Vacpack.Content.Items
 			// Use Properties
 			Item.useTime = 25;
 			Item.useAnimation = 25;
-
-			// Sound Property
 			Item.UseSound = SoundID.Item1;
 
-			// Yoyo Properties
-			Item.channel = true;
-			Item.shoot = ProjectileID.Amarok;
-			Item.shootSpeed = 16f;
+			// Suck Properties
+			Item.shoot = ModContent.ProjectileType<Tornado>();
+			Item.shootSpeed = 128f;
 			Item.useAmmo = AmmoID.None;
 		}
 
