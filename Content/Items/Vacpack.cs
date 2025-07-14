@@ -42,7 +42,7 @@ namespace Vacpack.Content.Items
 
 			// Suck Properties
 			Item.shoot = ModContent.ProjectileType<Tornado>();
-			Item.shootSpeed = 128f;
+			Item.shootSpeed = 64f + Player.defaultWidth;
 			Item.useAmmo = AmmoID.None;
 		}
 
